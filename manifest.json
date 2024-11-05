@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
     "name": "InterBubble",
-    "version": "1.0",
-    "description": "Intercepts and modifies JSON response from Twitter's API.",
+    "version": "0.0.1",
+    "description": "Hides or changes posts based on user preferences.",
     "permissions": [
         "scripting",
         "tabs",
