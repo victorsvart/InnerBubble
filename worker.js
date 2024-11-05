@@ -15,20 +15,19 @@ function modifyPageContent() {
 
     const root = reactroot.getElementsByClassName("css-175oi2r r-13awgt0 r-12vffkv");
     if (!root || root.length === 0) {
-        return; // Not ready yet, keep observing
+        return;
     }
 
     const content = root[0].getElementsByClassName("css-175oi2r r-1f2l425 r-13qz1uu r-417010 r-18u37iz");
     if (!content || content.length === 0) {
-        return; // Not ready yet, keep observing
+        return;
     }
 
     let debounceTimeout;
     const observer = new MutationObserver(() => {
-        // Clear the previous timeout to restart the debounce
         clearTimeout(debounceTimeout);
 
-        // Set a timeout to execute the logic after the DOM has stopped changing
+        // Set a timeout to execute the logic after the DOM has stopped changing, otherwise not all elements are changed
         debounceTimeout = setTimeout(() => {
             const main = content[0].children[3];
             if (!main) {
@@ -54,7 +53,7 @@ function modifyPageContent() {
                 return;
             }
 
-            // Check if the timeLine is still the loading spinner
+            // Check if the timeLine is still the loading spinner --  this is very specific so im adding as a reminder as to why i do this terrible thing
             if (timeLine.className === "css-175oi2r r-1awozwy r-1777fci") {
                 return; // Keep observing
             }
