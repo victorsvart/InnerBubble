@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "InterBubble",
+    "version": "1.0",
+    "description": "Intercepts and modifies JSON response from Twitter's API.",
+    "permissions": [
+        "scripting",
+        "tabs",
+        "activeTab"
+    ],
+    "host_permissions": [
+        "*://twitter.com/*",
+        "*://x.com/*"
+    ],
+    "background": {
+        "service_worker": "worker.js"
+    },
+    "action": {
+        "default_popup": "index.html"
+    }
+}
