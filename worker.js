@@ -30,6 +30,7 @@ function modifyPageContent() {
         // Set a timeout to execute the logic after the DOM has stopped changing, otherwise not all elements are changed
         debounceTimeout = setTimeout(() => {
             const main = content[0].children[3];
+            
             if (!main) {
                 console.error("Main element (children[3]) not found in content[0].");
                 return;
@@ -65,7 +66,7 @@ function modifyPageContent() {
                 console.error("timeLineContent element not found in MainContent.");
                 return;
             }
-            console.log(timeLineContent.children.length);
+
             for (let index = 0; index < timeLineContent.children.length; index++) {
                 const element = timeLineContent.children[index];
                 element.children[0].children[0].children[0].children[0].children[0].children[1].children[1].children[1].innerText = "i wish i could suck own dick"
